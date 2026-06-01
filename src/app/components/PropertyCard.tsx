@@ -17,9 +17,9 @@ export function PropertyCard({ property, variant = 'grid' }: PropertyCardProps) 
 
   return (
     <motion.div
-      whileHover={{ scale: 1.01 }}
-      whileTap={{ scale: 0.99 }}
-      className="bg-white rounded-card overflow-hidden shadow-card property-card-hover group flex flex-col"
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="liquid-glass rounded-card overflow-hidden shadow-card property-card-hover group flex flex-col border border-white/5"
     >
       <Link to={`/property/${property.id}`} className="block relative aspect-[4/3] overflow-hidden">
         <img
@@ -30,8 +30,8 @@ export function PropertyCard({ property, variant = 'grid' }: PropertyCardProps) 
         />
         {property.badge && (
           <div 
-            className="absolute top-3 left-3 bg-primary text-white px-3 py-1 uppercase rounded-tag shadow-md"
-            style={{ fontFamily: 'Inter', fontWeight: 700, fontSize: '11px', letterSpacing: '0.08em' }}
+            className="absolute top-3 left-3 bg-primary text-black px-3 py-1 uppercase rounded-tag shadow-md font-semibold"
+            style={{ fontFamily: 'Inter', fontSize: '11px', letterSpacing: '0.08em' }}
           >
             {property.badge}
           </div>
@@ -53,25 +53,25 @@ export function PropertyCard({ property, variant = 'grid' }: PropertyCardProps) 
 
       <Link to={`/property/${property.id}`} className="p-4 flex-1 flex flex-col justify-between">
         <div>
-          <h3 className="font-display font-semibold text-[18px] text-[#1C1C1C] truncate mb-1">
+          <h3 className="font-display font-semibold text-[18px] text-white truncate mb-1">
             {property.title}
           </h3>
-          <p className="font-sans text-[14px] text-[#666666] flex items-center gap-1.5 mb-3">
+          <p className="font-sans text-[14px] text-text-muted flex items-center gap-1.5 mb-3">
             <MapPin className="w-3.5 h-3.5 text-primary" />
             {property.location}
           </p>
 
           <div className="flex gap-4 mb-3">
-            <div className="flex items-center gap-1.5 font-sans text-[13px] text-[#666666]">
-              <Bed className="w-4 h-4 text-[#666666]" />
+            <div className="flex items-center gap-1.5 font-sans text-[13px] text-white/70">
+              <Bed className="w-4 h-4 text-primary" />
               <span>{property.beds} BHK</span>
             </div>
-            <div className="flex items-center gap-1.5 font-sans text-[13px] text-[#666666]">
-              <Bath className="w-4 h-4 text-[#666666]" />
-              <span>{property.baths}</span>
+            <div className="flex items-center gap-1.5 font-sans text-[13px] text-white/70">
+              <Bath className="w-4 h-4 text-primary" />
+              <span>{property.baths} Bath</span>
             </div>
-            <div className="flex items-center gap-1.5 font-sans text-[13px] text-[#666666]">
-              <Maximize2 className="w-4 h-4 text-[#666666]" />
+            <div className="flex items-center gap-1.5 font-sans text-[13px] text-white/70">
+              <Maximize2 className="w-4 h-4 text-primary" />
               <span>{property.area} sqft</span>
             </div>
           </div>
@@ -81,12 +81,12 @@ export function PropertyCard({ property, variant = 'grid' }: PropertyCardProps) 
           </p>
         </div>
 
-        <div className="flex items-center justify-between pt-3 border-t border-[#E8E8E8]">
-          <span className="font-sans text-[13px] text-[#666666] truncate pr-2">
-            By {property.developer || 'Parmar Properties'}
+        <div className="flex items-center justify-between pt-3 border-t border-white/5">
+          <span className="font-sans text-[13px] text-text-muted truncate pr-2">
+            By {property.developer || 'VEX'}
           </span>
           <button 
-            className="px-4 py-2 bg-primary text-white rounded-btn transition-colors hover:bg-primary-dark font-display font-semibold text-sm shrink-0 btn-gold-shimmer"
+            className="px-4 py-2 bg-primary text-black rounded-btn transition-colors hover:bg-primary-dark font-display font-semibold text-sm shrink-0 btn-gold-shimmer"
             onClick={(e) => { e.preventDefault(); /* Enquire logic */ }}
           >
             Enquire

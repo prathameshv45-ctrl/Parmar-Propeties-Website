@@ -80,7 +80,7 @@ export function PropertyDetailPage() {
           <div className="lg:col-span-2 flex flex-col gap-8">
             
             <ScrollReveal delay={0.2}>
-              <div className="bg-white rounded-[2rem] p-8 shadow-card border border-border/50">
+              <div className="liquid-glass rounded-[2rem] p-8 shadow-card border border-white/5">
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
@@ -105,13 +105,13 @@ export function PropertyDetailPage() {
                   <div className="flex gap-3">
                     <button
                       onClick={() => setIsSaved(!isSaved)}
-                      className="p-3 rounded-full border border-border/50 hover:bg-bg transition-colors"
+                      className="p-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors cursor-pointer"
                     >
                       <Heart
                         className={`w-5 h-5 ${isSaved ? 'fill-primary text-primary' : 'text-text-muted'}`}
                       />
                     </button>
-                    <button className="p-3 rounded-full border border-border/50 hover:bg-bg transition-colors">
+                    <button className="p-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors cursor-pointer">
                       <Share2 className="w-5 h-5 text-text-muted" />
                     </button>
                   </div>
@@ -123,7 +123,7 @@ export function PropertyDetailPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6 py-6 border-y border-border/50">
+                <div className="grid grid-cols-3 gap-6 py-6 border-y border-white/5">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center shrink-0">
                       <Bed className="w-6 h-6 text-primary" />
@@ -156,8 +156,8 @@ export function PropertyDetailPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <div className="bg-white rounded-[2rem] p-8 shadow-card border border-border/50">
-                <div className="flex gap-6 border-b border-border/50 mb-8 overflow-x-auto hide-scrollbar">
+              <div className="liquid-glass rounded-[2rem] p-8 shadow-card border border-white/5">
+                <div className="flex gap-6 border-b border-white/5 mb-8 overflow-x-auto hide-scrollbar">
                   {tabs.map((tab) => (
                     <button
                       key={tab.id}
@@ -199,7 +199,7 @@ export function PropertyDetailPage() {
                             { label: 'RERA ID', value: property.reraId },
                             { label: 'Developer', value: property.developer },
                           ].map((detail, index) => (
-                            <div key={index} className="p-4 rounded-xl bg-bg border border-border/50 hover:border-primary/30 transition-colors">
+                            <div key={index} className="p-4 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors">
                               <p className="font-sans text-xs text-text-muted uppercase tracking-wider font-semibold mb-1">
                                 {detail.label}
                               </p>
@@ -225,7 +225,7 @@ export function PropertyDetailPage() {
 
                     {activeTab === 'location' && (
                       <div>
-                        <div className="aspect-video bg-bg rounded-xl flex items-center justify-center border border-border/50 mb-4">
+                        <div className="aspect-video bg-white/5 rounded-xl flex items-center justify-center border border-white/5 mb-4">
                           <MapPin className="w-12 h-12 text-text-muted/50" />
                           <span className="ml-4 font-sans font-medium text-text-muted">Map View Placeholder</span>
                         </div>
@@ -249,7 +249,7 @@ export function PropertyDetailPage() {
 
             {/* EMI Calculator */}
             <ScrollReveal delay={0.4}>
-              <div className="bg-white rounded-[2rem] p-8 shadow-card border border-border/50">
+              <div className="liquid-glass rounded-[2rem] p-8 shadow-card border border-white/5">
                 <h3 className="font-display font-semibold text-2xl text-text mb-8">EMI Calculator</h3>
 
                 <div className="grid md:grid-cols-2 gap-12">
@@ -266,7 +266,7 @@ export function PropertyDetailPage() {
                         step={100000}
                         value={emiData.loanAmount}
                         onChange={(e) => setEmiData({ ...emiData, loanAmount: parseInt(e.target.value) })}
-                        className="w-full accent-primary h-2 bg-border rounded-lg appearance-none cursor-pointer"
+                        className="w-full accent-primary h-2 bg-white/10 rounded-lg appearance-none cursor-pointer"
                       />
                     </div>
 
@@ -282,7 +282,7 @@ export function PropertyDetailPage() {
                         step="0.1"
                         value={emiData.interestRate}
                         onChange={(e) => setEmiData({ ...emiData, interestRate: parseFloat(e.target.value) })}
-                        className="w-full accent-primary h-2 bg-border rounded-lg appearance-none cursor-pointer"
+                        className="w-full accent-primary h-2 bg-white/10 rounded-lg appearance-none cursor-pointer"
                       />
                     </div>
 
@@ -297,13 +297,13 @@ export function PropertyDetailPage() {
                         max="30"
                         value={emiData.tenure}
                         onChange={(e) => setEmiData({ ...emiData, tenure: parseInt(e.target.value) })}
-                        className="w-full accent-primary h-2 bg-border rounded-lg appearance-none cursor-pointer"
+                        className="w-full accent-primary h-2 bg-white/10 rounded-lg appearance-none cursor-pointer"
                       />
                     </div>
                   </div>
 
                   <div className="flex items-center justify-center">
-                    <div className="p-8 w-full rounded-2xl bg-gradient-to-br from-primary-light to-white border border-primary/20 text-center shadow-lg relative overflow-hidden">
+                    <div className="p-8 w-full rounded-2xl bg-gradient-to-br from-primary-light to-white/5 border border-primary/20 text-center shadow-lg relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-16 -mt-16" />
                       <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -ml-16 -mb-16" />
                       
@@ -327,14 +327,14 @@ export function PropertyDetailPage() {
           {/* Sticky Sidebar */}
           <div className="lg:col-span-1">
             <ScrollReveal delay={0.5}>
-              <div className="sticky top-28 bg-white rounded-[2rem] p-8 shadow-card border border-border/50">
+              <div className="sticky top-28 liquid-glass rounded-[2rem] p-8 shadow-card border border-white/5">
                 <h3 className="font-display font-semibold text-xl text-center text-text mb-6">Contact Agent</h3>
 
                 <div className="flex flex-col items-center mb-8">
-                  <div className="w-24 h-24 rounded-full mb-4 flex items-center justify-center bg-gradient-to-br from-primary-light to-primary-light/30 border-4 border-white shadow-md">
-                    <span className="font-display font-bold text-3xl text-primary">PP</span>
+                  <div className="w-24 h-24 rounded-full mb-4 flex items-center justify-center bg-gradient-to-br from-primary-light to-primary-light/30 border-4 border-white/10 shadow-md">
+                    <span className="font-display font-bold text-3xl text-primary">VEX</span>
                   </div>
-                  <p className="font-display font-semibold text-lg text-text">Parmar Properties</p>
+                  <p className="font-display font-semibold text-lg text-text">VEX Properties</p>
                   <p className="font-sans text-sm text-text-muted">RERA Registered Agent</p>
                 </div>
 
@@ -350,7 +350,7 @@ export function PropertyDetailPage() {
                   </a>
                   <a
                     href="tel:+919876543210"
-                    className="w-full py-3.5 rounded-btn bg-primary text-white flex items-center justify-center gap-2 font-sans font-semibold hover:bg-primary-dark transition-colors shadow-sm"
+                    className="w-full py-3.5 rounded-btn bg-primary text-black flex items-center justify-center gap-2 font-sans font-semibold hover:bg-primary-dark transition-colors shadow-sm btn-gold-shimmer"
                   >
                     <Phone className="w-5 h-5" />
                     Call Now
@@ -358,29 +358,29 @@ export function PropertyDetailPage() {
                 </div>
 
                 <div className="relative mb-8">
-                  <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-border/50" /></div>
-                  <div className="relative flex justify-center"><span className="bg-white px-4 font-sans text-xs text-text-muted uppercase tracking-wider font-semibold">Or Request Callback</span></div>
+                  <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/5" /></div>
+                  <div className="relative flex justify-center"><span className="bg-transparent px-4 font-sans text-xs text-text-muted uppercase tracking-wider font-semibold">Or Request Callback</span></div>
                 </div>
 
                 <form className="space-y-4">
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="w-full px-4 py-3.5 rounded-btn bg-bg border border-border/50 outline-none focus:border-primary transition-colors font-sans text-sm"
+                    className="w-full px-4 py-3.5 rounded-btn bg-white/5 border border-white/5 outline-none focus:border-primary transition-colors font-sans text-sm text-white placeholder-white/30 focus:bg-white/10"
                   />
                   <input
                     type="email"
                     placeholder="Email Address"
-                    className="w-full px-4 py-3.5 rounded-btn bg-bg border border-border/50 outline-none focus:border-primary transition-colors font-sans text-sm"
+                    className="w-full px-4 py-3.5 rounded-btn bg-white/5 border border-white/5 outline-none focus:border-primary transition-colors font-sans text-sm text-white placeholder-white/30 focus:bg-white/10"
                   />
                   <input
                     type="tel"
                     placeholder="Phone Number"
-                    className="w-full px-4 py-3.5 rounded-btn bg-bg border border-border/50 outline-none focus:border-primary transition-colors font-sans text-sm"
+                    className="w-full px-4 py-3.5 rounded-btn bg-white/5 border border-white/5 outline-none focus:border-primary transition-colors font-sans text-sm text-white placeholder-white/30 focus:bg-white/10"
                   />
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-btn border-2 border-primary text-primary font-display font-semibold text-base transition-colors hover:bg-primary hover:text-white"
+                    className="w-full py-4 rounded-btn bg-primary text-black font-display font-semibold text-base transition-colors hover:bg-primary-dark btn-gold-shimmer"
                   >
                     Send Enquiry
                   </button>

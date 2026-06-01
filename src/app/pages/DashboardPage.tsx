@@ -21,7 +21,7 @@ export function DashboardPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <div className="bg-white rounded-[var(--radius-card)] p-4" style={{ boxShadow: 'var(--shadow-card)' }}>
+            <div className="liquid-glass border border-white/5 rounded-[var(--radius-card)] p-4 shadow-card">
               <nav className="space-y-1">
                 {[
                   { icon: User, label: 'My Profile', path: '/dashboard/profile' },
@@ -36,7 +36,7 @@ export function DashboardPage() {
                     className={`flex items-center gap-3 px-4 py-3 rounded-[var(--radius-btn)] transition-colors ${
                       item.active
                         ? 'bg-[var(--pp-primary-light)] text-[var(--pp-primary)]'
-                        : 'text-[var(--pp-text-muted)] hover:bg-[var(--pp-bg)]'
+                        : 'text-[var(--pp-text-muted)] hover:bg-white/5'
                     }`}
                     style={{ fontSize: '15px', fontWeight: item.active ? 600 : 400 }}
                   >
@@ -49,14 +49,14 @@ export function DashboardPage() {
           </aside>
 
           <main className="lg:col-span-3 space-y-6">
-            <div className="bg-white rounded-[var(--radius-card)] p-6" style={{ boxShadow: 'var(--shadow-card)' }}>
+            <div className="liquid-glass border border-white/5 rounded-[var(--radius-card)] p-6 shadow-card">
               <div className="flex items-center justify-between mb-6">
                 <h2 style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '20px', color: 'var(--pp-text)' }}>
                   My Listings
                 </h2>
                 <Link
                   to="/add-property"
-                  className="px-5 py-2.5 rounded-[var(--radius-btn)] bg-[var(--pp-primary)] text-white transition-colors hover:bg-[var(--pp-primary-dark)]"
+                  className="px-5 py-2.5 rounded-[var(--radius-btn)] bg-primary text-black transition-all hover:bg-primary-dark btn-gold-shimmer"
                   style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '14px' }}
                 >
                   Add Property
@@ -66,7 +66,7 @@ export function DashboardPage() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-[var(--pp-border)]">
+                    <tr className="border-b border-white/5">
                       <th className="text-left py-3 px-4" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--pp-text)' }}>
                         Property
                       </th>
@@ -86,7 +86,7 @@ export function DashboardPage() {
                   </thead>
                   <tbody>
                     {myListings.map((listing) => (
-                      <tr key={listing.id} className="border-b border-[var(--pp-border)]">
+                      <tr key={listing.id} className="border-b border-white/5">
                         <td className="py-4 px-4" style={{ fontSize: '15px', color: 'var(--pp-text)' }}>
                           {listing.title}
                         </td>
@@ -104,23 +104,23 @@ export function DashboardPage() {
                         </td>
                         <td className="py-4 px-4" style={{ fontSize: '15px', color: 'var(--pp-text-muted)' }}>
                           <span className="flex items-center gap-2">
-                            <Eye className="w-4 h-4" />
+                            <Eye className="w-4 h-4 text-primary" />
                             {listing.views}
                           </span>
                         </td>
                         <td className="py-4 px-4" style={{ fontSize: '15px', color: 'var(--pp-text-muted)' }}>
                           <span className="flex items-center gap-2">
-                            <MessageSquare className="w-4 h-4" />
+                            <MessageSquare className="w-4 h-4 text-primary" />
                             {listing.enquiries}
                           </span>
                         </td>
                         <td className="py-4 px-4">
                           <div className="flex gap-2">
-                            <button className="p-2 rounded-[var(--radius-btn)] hover:bg-[var(--pp-bg)]">
+                            <button className="p-2 rounded-[var(--radius-btn)] hover:bg-white/5 cursor-pointer">
                               <Edit className="w-4 h-4" style={{ color: 'var(--pp-text-muted)' }} />
                             </button>
-                            <button className="p-2 rounded-[var(--radius-btn)] hover:bg-[var(--pp-bg)]">
-                              <Trash2 className="w-4 h-4" style={{ color: 'var(--destructive)' }} />
+                            <button className="p-2 rounded-[var(--radius-btn)] hover:bg-white/5 cursor-pointer">
+                              <Trash2 className="w-4 h-4" style={{ color: 'rgba(239, 68, 68, 0.8)' }} />
                             </button>
                           </div>
                         </td>
@@ -131,14 +131,14 @@ export function DashboardPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-[var(--radius-card)] p-6" style={{ boxShadow: 'var(--shadow-card)' }}>
+            <div className="liquid-glass border border-white/5 rounded-[var(--radius-card)] p-6 shadow-card">
               <h2 className="mb-6" style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '20px', color: 'var(--pp-text)' }}>
                 Recent Enquiries
               </h2>
 
               <div className="space-y-4">
                 {enquiries.map((enquiry) => (
-                  <div key={enquiry.id} className="p-4 rounded-lg border border-[var(--pp-border)]">
+                  <div key={enquiry.id} className="p-4 rounded-lg border border-white/5 bg-white/5 hover:border-primary/20 transition-all duration-300">
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--pp-text)' }}>
@@ -149,7 +149,7 @@ export function DashboardPage() {
                         </p>
                       </div>
                       <button
-                        className="px-4 py-2 rounded-[var(--radius-btn)] bg-[var(--pp-primary)] text-white transition-colors hover:bg-[var(--pp-primary-dark)]"
+                        className="px-4 py-2 rounded-[var(--radius-btn)] bg-primary text-black transition-all hover:bg-primary-dark btn-gold-shimmer"
                         style={{ fontSize: '13px', fontWeight: 600 }}
                       >
                         Reply

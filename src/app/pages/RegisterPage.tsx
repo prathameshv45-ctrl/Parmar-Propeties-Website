@@ -22,7 +22,7 @@ export function RegisterPage() {
     <ScrollReveal>
       <div className="min-h-screen pt-16 flex items-center justify-center" style={{ backgroundColor: 'var(--pp-bg)' }}>
         <div className="w-full max-w-md px-6 py-12">
-          <div className="bg-white rounded-[var(--radius-card)] p-8" style={{ boxShadow: 'var(--shadow-card)' }}>
+          <div className="liquid-glass border border-white/5 rounded-[var(--radius-card)] p-8 shadow-card">
             <div className="text-center mb-8">
               <h1
                 className="mb-2"
@@ -31,7 +31,7 @@ export function RegisterPage() {
                 Create Account
               </h1>
               <p style={{ fontSize: '15px', color: 'var(--pp-text-muted)' }}>
-                Join Parmar Properties today
+                Join VEX Properties today
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export function RegisterPage() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="John Doe"
-                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20"
                     style={{ fontSize: '15px' }}
                     required
                   />
@@ -77,7 +77,7 @@ export function RegisterPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="you@example.com"
-                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20"
                     style={{ fontSize: '15px' }}
                     required
                   />
@@ -103,7 +103,7 @@ export function RegisterPage() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+91 98765 43210"
-                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20"
                     style={{ fontSize: '15px' }}
                     required
                   />
@@ -129,7 +129,7 @@ export function RegisterPage() {
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     placeholder="••••••••"
-                    className="w-full pl-11 pr-12 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full pl-11 pr-12 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20"
                     style={{ fontSize: '15px' }}
                     required
                   />
@@ -140,7 +140,7 @@ export function RegisterPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
                   >
                     {showPassword ? (
                       <EyeOff className="w-5 h-5" style={{ color: 'var(--pp-text-muted)' }} />
@@ -166,7 +166,7 @@ export function RegisterPage() {
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                     placeholder="••••••••"
-                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20"
                     style={{ fontSize: '15px' }}
                     required
                   />
@@ -178,7 +178,7 @@ export function RegisterPage() {
               </div>
 
               <label className="flex items-start gap-2 cursor-pointer">
-                <input type="checkbox" className="w-4 h-4 mt-1 rounded accent-[var(--pp-primary)]" required />
+                <input type="checkbox" className="w-4 h-4 mt-1 rounded accent-[var(--pp-primary)] cursor-pointer" required />
                 <span style={{ fontSize: '13px', color: 'var(--pp-text-muted)' }}>
                   I agree to the{' '}
                   <Link to="/terms" className="text-[var(--pp-primary)] hover:underline">
@@ -193,7 +193,7 @@ export function RegisterPage() {
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-[var(--radius-btn)] bg-[var(--pp-primary)] text-white transition-colors hover:bg-[var(--pp-primary-dark)]"
+                className="w-full py-3 rounded-[var(--radius-btn)] bg-primary text-black transition-all hover:bg-primary-dark btn-gold-shimmer font-semibold"
                 style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '16px' }}
               >
                 Create Account

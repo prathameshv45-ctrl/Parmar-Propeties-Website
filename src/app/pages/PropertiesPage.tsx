@@ -111,9 +111,9 @@ export function PropertiesPage() {
 
   const FilterContent = () => (
     <>
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-border/50 hidden lg:flex">
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/5 hidden lg:flex">
         <h3 className="font-display font-semibold text-lg text-text">Filters</h3>
-        <button className="text-primary hover:text-primary-dark font-semibold text-sm transition-colors">
+        <button className="text-primary hover:text-primary-dark font-semibold text-sm transition-colors cursor-pointer">
           Clear All
         </button>
       </div>
@@ -207,7 +207,7 @@ export function PropertiesPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           
           {/* Desktop Sidebar Filter */}
-          <aside className="hidden lg:block w-80 shrink-0 sticky top-28 self-start h-[calc(100vh-8rem)] overflow-y-auto hide-scrollbar rounded-xl bg-white p-6 shadow-card border border-border/50">
+          <aside className="hidden lg:block w-80 shrink-0 sticky top-28 self-start h-[calc(100vh-8rem)] overflow-y-auto hide-scrollbar rounded-xl liquid-glass p-6 shadow-card border border-white/5">
             <FilterContent />
           </aside>
 
@@ -227,13 +227,13 @@ export function PropertiesPage() {
                   animate={{ y: 0 }}
                   exit={{ y: "100%" }}
                   transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-                  className="fixed bottom-0 left-0 right-0 h-[85vh] bg-white rounded-t-3xl z-50 lg:hidden flex flex-col shadow-2xl"
+                  className="fixed bottom-0 left-0 right-0 h-[85vh] liquid-glass border-t border-white/10 rounded-t-3xl z-50 lg:hidden flex flex-col shadow-2xl"
                 >
-                  <div className="flex items-center justify-between p-6 border-b border-border/50">
+                  <div className="flex items-center justify-between p-6 border-b border-white/5 bg-navy-mid/40">
                     <h3 className="font-display font-semibold text-xl text-text">Filters</h3>
                     <div className="flex items-center gap-4">
-                      <button className="text-primary font-semibold text-sm">Clear All</button>
-                      <button onClick={() => setShowMobileFilters(false)} className="p-2 bg-bg rounded-full text-text-muted hover:text-text transition-colors">
+                      <button className="text-primary font-semibold text-sm cursor-pointer">Clear All</button>
+                      <button onClick={() => setShowMobileFilters(false)} className="p-2 liquid-glass border border-white/5 rounded-full text-text-muted hover:text-text transition-colors cursor-pointer">
                         <X className="w-5 h-5" />
                       </button>
                     </div>
@@ -241,8 +241,8 @@ export function PropertiesPage() {
                   <div className="flex-1 overflow-y-auto p-6 hide-scrollbar">
                     <FilterContent />
                   </div>
-                  <div className="p-6 border-t border-border/50">
-                    <button onClick={() => setShowMobileFilters(false)} className="w-full py-4 rounded-btn bg-primary text-white font-display font-semibold text-base transition-colors hover:bg-primary-dark shadow-md">
+                  <div className="p-6 border-t border-white/5 bg-navy-mid/40">
+                    <button onClick={() => setShowMobileFilters(false)} className="w-full py-4 rounded-btn bg-primary text-black font-display font-semibold text-base transition-colors hover:bg-primary-dark shadow-md btn-gold-shimmer">
                       Show Results ({allProperties.length})
                     </button>
                   </div>
@@ -260,7 +260,7 @@ export function PropertiesPage() {
                 </p>
                 <button
                   onClick={() => setShowMobileFilters(true)}
-                  className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-border/50 text-text font-medium text-sm hover:shadow-md transition-shadow"
+                  className="lg:hidden flex items-center gap-2 px-4 py-2 rounded-full liquid-glass shadow-sm border border-white/5 text-text font-medium text-sm hover:shadow-md transition-shadow cursor-pointer"
                 >
                   <SlidersHorizontal className="w-4 h-4" />
                   Filters
@@ -271,7 +271,7 @@ export function PropertiesPage() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-2.5 rounded-btn bg-white border border-border/50 outline-none font-sans text-sm text-text font-medium hover:border-primary transition-colors cursor-pointer shadow-sm"
+                  className="px-4 py-2.5 rounded-btn liquid-glass border border-white/10 outline-none font-sans text-sm text-white font-medium hover:border-primary transition-colors cursor-pointer shadow-sm"
                 >
                   <option value="relevance">Sort by: Relevance</option>
                   <option value="price-low">Price: Low to High</option>
@@ -279,23 +279,23 @@ export function PropertiesPage() {
                   <option value="newest">Newest First</option>
                 </select>
 
-                <div className="hidden sm:flex gap-1 bg-white p-1 rounded-btn border border-border/50 shadow-sm">
+                <div className="hidden sm:flex gap-1 liquid-glass p-1 rounded-btn border border-white/10 shadow-sm">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-md transition-all ${
+                    className={`p-2 rounded-md transition-all cursor-pointer ${
                       viewMode === 'grid'
-                        ? 'bg-primary text-white shadow-sm'
-                        : 'bg-transparent text-text-muted hover:text-text hover:bg-bg'
+                        ? 'bg-primary text-black shadow-sm'
+                        : 'bg-transparent text-text-muted hover:text-text hover:bg-white/5'
                     }`}
                   >
                     <Grid className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-md transition-all ${
+                    className={`p-2 rounded-md transition-all cursor-pointer ${
                       viewMode === 'list'
-                        ? 'bg-primary text-white shadow-sm'
-                        : 'bg-transparent text-text-muted hover:text-text hover:bg-bg'
+                        ? 'bg-primary text-black shadow-sm'
+                        : 'bg-transparent text-text-muted hover:text-text hover:bg-white/5'
                     }`}
                   >
                     <List className="w-4 h-4" />
@@ -314,22 +314,22 @@ export function PropertiesPage() {
 
             <ScrollReveal delay={0.3}>
               <div className="flex justify-center items-center gap-2 mt-12">
-                <button className="px-5 py-2.5 rounded-btn bg-white border border-border/50 font-sans text-sm font-medium text-text hover:bg-bg transition-colors shadow-sm">
+                <button className="px-5 py-2.5 rounded-btn liquid-glass border border-white/5 font-sans text-sm font-medium text-text hover:bg-white/5 hover:border-primary/20 transition-all shadow-sm cursor-pointer">
                   Previous
                 </button>
                 {[1, 2, 3, 4, 5].map((page) => (
                   <button
                     key={page}
-                    className={`w-10 h-10 rounded-btn font-sans text-sm font-semibold transition-all shadow-sm ${
+                    className={`w-10 h-10 rounded-btn font-sans text-sm font-semibold transition-all shadow-sm cursor-pointer ${
                       page === 1
-                        ? 'bg-primary text-white'
-                        : 'bg-white text-text border border-border/50 hover:bg-bg hover:border-primary/30'
+                        ? 'bg-primary text-black'
+                        : 'liquid-glass text-text border border-white/5 hover:bg-white/5 hover:border-primary/30'
                     }`}
                   >
                     {page}
                   </button>
                 ))}
-                <button className="px-5 py-2.5 rounded-btn bg-white border border-border/50 font-sans text-sm font-medium text-text hover:bg-bg transition-colors shadow-sm">
+                <button className="px-5 py-2.5 rounded-btn liquid-glass border border-white/5 font-sans text-sm font-medium text-text hover:bg-white/5 hover:border-primary/20 transition-all shadow-sm cursor-pointer">
                   Next
                 </button>
               </div>

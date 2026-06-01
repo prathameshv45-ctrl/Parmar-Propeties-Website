@@ -19,7 +19,7 @@ export function LoginPage() {
     <ScrollReveal>
       <div className="min-h-screen pt-16 flex items-center justify-center" style={{ backgroundColor: 'var(--pp-bg)' }}>
         <div className="w-full max-w-md px-6 py-12">
-          <div className="bg-white rounded-[var(--radius-card)] p-8" style={{ boxShadow: 'var(--shadow-card)' }}>
+          <div className="liquid-glass border border-white/5 rounded-[var(--radius-card)] p-8 shadow-card">
             <div className="text-center mb-8">
               <h1
                 className="mb-2"
@@ -28,7 +28,7 @@ export function LoginPage() {
                 Welcome Back
               </h1>
               <p style={{ fontSize: '15px', color: 'var(--pp-text-muted)' }}>
-                Login to your Parmar Properties account
+                Login to your VEX Properties account
               </p>
             </div>
 
@@ -48,7 +48,7 @@ export function LoginPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="you@example.com"
-                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full pl-11 pr-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20"
                     style={{ fontSize: '15px' }}
                     required
                   />
@@ -74,7 +74,7 @@ export function LoginPage() {
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     placeholder="••••••••"
-                    className="w-full pl-11 pr-12 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full pl-11 pr-12 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20"
                     style={{ fontSize: '15px' }}
                     required
                   />
@@ -85,7 +85,7 @@ export function LoginPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
                   >
                     {showPassword ? (
                       <EyeOff className="w-5 h-5" style={{ color: 'var(--pp-text-muted)' }} />
@@ -98,7 +98,7 @@ export function LoginPage() {
 
               <div className="flex items-center justify-between">
                 <label className="flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" className="w-4 h-4 rounded accent-[var(--pp-primary)]" />
+                  <input type="checkbox" className="w-4 h-4 rounded accent-[var(--pp-primary)] cursor-pointer" />
                   <span style={{ fontSize: '14px', color: 'var(--pp-text-muted)' }}>Remember me</span>
                 </label>
                 <Link
@@ -112,7 +112,7 @@ export function LoginPage() {
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-[var(--radius-btn)] bg-[var(--pp-primary)] text-white transition-colors hover:bg-[var(--pp-primary-dark)]"
+                className="w-full py-3 rounded-[var(--radius-btn)] bg-primary text-black transition-all hover:bg-primary-dark btn-gold-shimmer"
                 style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '16px' }}
               >
                 Sign In
@@ -134,11 +134,11 @@ export function LoginPage() {
 
             <div className="mt-8 relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-[var(--pp-border)]"></div>
+                <div className="w-full border-t border-white/5"></div>
               </div>
               <div className="relative flex justify-center text-sm">
                 <span
-                  className="px-4 bg-white"
+                  className="px-4 py-1 bg-navy rounded-md border border-white/5"
                   style={{ fontSize: '13px', color: 'var(--pp-text-muted)' }}
                 >
                   Or continue with
@@ -149,8 +149,8 @@ export function LoginPage() {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <button
                 type="button"
-                className="py-3 px-4 rounded-[var(--radius-btn)] border border-[var(--pp-border)] transition-colors hover:bg-[var(--pp-bg)] flex items-center justify-center gap-2"
-                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--pp-text)' }}
+                className="py-3 px-4 rounded-[var(--radius-btn)] border border-white/10 bg-white/5 transition-all hover:bg-white/10 flex items-center justify-center gap-2 cursor-pointer text-white"
+                style={{ fontSize: '14px', fontWeight: 600 }}
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path
@@ -174,8 +174,8 @@ export function LoginPage() {
               </button>
               <button
                 type="button"
-                className="py-3 px-4 rounded-[var(--radius-btn)] border border-[var(--pp-border)] transition-colors hover:bg-[var(--pp-bg)] flex items-center justify-center gap-2"
-                style={{ fontSize: '14px', fontWeight: 600, color: 'var(--pp-text)' }}
+                className="py-3 px-4 rounded-[var(--radius-btn)] border border-white/10 bg-white/5 transition-all hover:bg-white/10 flex items-center justify-center gap-2 cursor-pointer text-white"
+                style={{ fontSize: '14px', fontWeight: 600 }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />

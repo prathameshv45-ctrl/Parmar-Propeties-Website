@@ -14,18 +14,18 @@ export function MobileBottomNav() {
   ];
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white z-50 pb-safe" style={{ boxShadow: '0 -2px 12px rgba(0,0,0,0.08)' }}>
-      <div className="flex justify-around items-center h-16">
+    <div className="md:hidden fixed bottom-4 left-4 right-4 liquid-glass z-50 rounded-2xl shadow-hero border border-white/10 overflow-hidden">
+      <div className="flex justify-around items-center h-16 px-2">
         {navItems.map((item, index) => {
           const isActive = path === item.to || (path === '' && item.to === '/');
 
           if (item.isMain) {
             return (
               <Link key={index} to={item.to} className="flex flex-col items-center justify-center -mt-6">
-                <div className="bg-[var(--pp-primary)] w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg shadow-black/10">
+                <div className="bg-primary w-12 h-12 rounded-full flex items-center justify-center text-black shadow-lg shadow-black/30 btn-gold-shimmer transition-transform hover:scale-105">
                   <item.icon className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] mt-1 font-medium text-[var(--pp-text)]">
+                <span className="text-[10px] mt-1 font-medium text-white">
                   {item.label}
                 </span>
               </Link>
@@ -35,10 +35,10 @@ export function MobileBottomNav() {
           return (
             <Link key={index} to={item.to} className="flex flex-col items-center justify-center w-16">
               <item.icon 
-                className={`w-6 h-6 ${isActive ? 'text-[var(--pp-primary)]' : 'text-gray-400'}`} 
+                className={`w-6 h-6 transition-colors ${isActive ? 'text-primary' : 'text-white/50 hover:text-white'}`} 
               />
               {isActive && (
-                <span className="text-[10px] mt-1 font-medium text-[var(--pp-primary)]">
+                <span className="text-[10px] mt-1 font-medium text-primary">
                   {item.label}
                 </span>
               )}

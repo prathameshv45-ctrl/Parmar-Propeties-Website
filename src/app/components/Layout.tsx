@@ -1,5 +1,6 @@
 import { Navbar } from './Navbar';
 import { useLocation } from 'react-router';
+import { ErrorBoundary } from './ErrorBoundary';
 import { MobileBottomNav } from './MobileBottomNav';
 
 interface LayoutProps {
@@ -13,7 +14,9 @@ export function Layout({ children }: LayoutProps) {
   return (
     <>
       {!isHome && <Navbar />}
+    <ErrorBoundary>
       {children}
+    </ErrorBoundary>
       <MobileBottomNav />
     </>
   );

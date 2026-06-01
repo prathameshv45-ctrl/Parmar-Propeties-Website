@@ -62,8 +62,8 @@ export function AddPropertyPage() {
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                     step.number <= currentStep
-                      ? 'bg-[var(--pp-primary)] text-white'
-                      : 'bg-[var(--pp-bg)] text-[var(--pp-text-muted)]'
+                      ? 'bg-primary text-black font-bold shadow-md shadow-primary/20'
+                      : 'liquid-glass border border-white/10 text-white/50'
                   }`}
                   style={{ fontWeight: 600, fontSize: '16px' }}
                 >
@@ -72,7 +72,7 @@ export function AddPropertyPage() {
                 {step.number < totalSteps && (
                   <div
                     className={`flex-1 h-1 mx-2 ${
-                      step.number < currentStep ? 'bg-[var(--pp-primary)]' : 'bg-[var(--pp-border)]'
+                      step.number < currentStep ? 'bg-primary' : 'bg-white/10'
                     }`}
                   ></div>
                 )}
@@ -84,9 +84,9 @@ export function AddPropertyPage() {
               <p
                 key={step.number}
                 className={`text-center flex-1 ${
-                  step.number === currentStep ? 'text-[var(--pp-primary)]' : 'text-[var(--pp-text-muted)]'
+                  step.number === currentStep ? 'text-primary font-semibold' : 'text-text-muted'
                 }`}
-                style={{ fontSize: '13px', fontWeight: step.number === currentStep ? 600 : 400 }}
+                style={{ fontSize: '13px' }}
               >
                 {step.label}
               </p>
@@ -94,7 +94,7 @@ export function AddPropertyPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-[var(--radius-card)] p-8 mb-6" style={{ boxShadow: 'var(--shadow-card)' }}>
+        <div className="liquid-glass border border-white/5 rounded-[var(--radius-card)] p-8 mb-6 shadow-card">
           {currentStep === 1 && (
             <div className="space-y-5">
               <h2 className="mb-6" style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '20px' }}>
@@ -110,7 +110,7 @@ export function AddPropertyPage() {
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                   placeholder="e.g., Monte South"
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                   style={{ fontSize: '15px' }}
                 />
               </div>
@@ -122,15 +122,15 @@ export function AddPropertyPage() {
                 <select
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans cursor-pointer"
                   style={{ fontSize: '15px' }}
                 >
-                  <option value="">Select Location</option>
-                  <option value="Byculla">Byculla, South Mumbai</option>
-                  <option value="Parel">Parel, South Mumbai</option>
-                  <option value="Lalbaug">Lalbaug, South Mumbai</option>
-                  <option value="Prabhadevi">Prabhadevi, South Mumbai</option>
-                  <option value="NM Joshi">NM Joshi Marg, South Mumbai</option>
+                  <option value="" className="bg-[#0B0B0F]">Select Location</option>
+                  <option value="Byculla" className="bg-[#0B0B0F]">Byculla, South Mumbai</option>
+                  <option value="Parel" className="bg-[#0B0B0F]">Parel, South Mumbai</option>
+                  <option value="Lalbaug" className="bg-[#0B0B0F]">Lalbaug, South Mumbai</option>
+                  <option value="Prabhadevi" className="bg-[#0B0B0F]">Prabhadevi, South Mumbai</option>
+                  <option value="NM Joshi" className="bg-[#0B0B0F]">NM Joshi Marg, South Mumbai</option>
                 </select>
               </div>
 
@@ -142,13 +142,13 @@ export function AddPropertyPage() {
                   <select
                     value={formData.type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans cursor-pointer"
                     style={{ fontSize: '15px' }}
                   >
-                    <option value="">Select Type</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Penthouse">Penthouse</option>
-                    <option value="Villa">Villa</option>
+                    <option value="" className="bg-[#0B0B0F]">Select Type</option>
+                    <option value="Apartment" className="bg-[#0B0B0F]">Apartment</option>
+                    <option value="Penthouse" className="bg-[#0B0B0F]">Penthouse</option>
+                    <option value="Villa" className="bg-[#0B0B0F]">Villa</option>
                   </select>
                 </div>
 
@@ -159,12 +159,12 @@ export function AddPropertyPage() {
                   <select
                     value={formData.status}
                     onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans cursor-pointer"
                     style={{ fontSize: '15px' }}
                   >
-                    <option value="">Select Status</option>
-                    <option value="Ready to Move">Ready to Move</option>
-                    <option value="Under Construction">Under Construction</option>
+                    <option value="" className="bg-[#0B0B0F]">Select Status</option>
+                    <option value="Ready to Move" className="bg-[#0B0B0F]">Ready to Move</option>
+                    <option value="Under Construction" className="bg-[#0B0B0F]">Under Construction</option>
                   </select>
                 </div>
               </div>
@@ -178,7 +178,7 @@ export function AddPropertyPage() {
                   value={formData.developer}
                   onChange={(e) => setFormData({ ...formData, developer: e.target.value })}
                   placeholder="e.g., Lodha Group"
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                   style={{ fontSize: '15px' }}
                 />
               </div>
@@ -201,7 +201,7 @@ export function AddPropertyPage() {
                     value={formData.beds}
                     onChange={(e) => setFormData({ ...formData, beds: e.target.value })}
                     placeholder="3"
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                     style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -215,7 +215,7 @@ export function AddPropertyPage() {
                     value={formData.baths}
                     onChange={(e) => setFormData({ ...formData, baths: e.target.value })}
                     placeholder="3"
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                     style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -229,7 +229,7 @@ export function AddPropertyPage() {
                     value={formData.area}
                     onChange={(e) => setFormData({ ...formData, area: e.target.value })}
                     placeholder="1450"
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                     style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -243,7 +243,7 @@ export function AddPropertyPage() {
                     value={formData.carpetArea}
                     onChange={(e) => setFormData({ ...formData, carpetArea: e.target.value })}
                     placeholder="1350"
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                     style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -257,7 +257,7 @@ export function AddPropertyPage() {
                     value={formData.floor}
                     onChange={(e) => setFormData({ ...formData, floor: e.target.value })}
                     placeholder="12"
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                     style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -271,7 +271,7 @@ export function AddPropertyPage() {
                     value={formData.totalFloors}
                     onChange={(e) => setFormData({ ...formData, totalFloors: e.target.value })}
                     placeholder="25"
-                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                    className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                     style={{ fontSize: '15px' }}
                   />
                 </div>
@@ -286,7 +286,7 @@ export function AddPropertyPage() {
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   placeholder="Describe your property..."
                   rows={5}
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none resize-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none resize-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                   style={{ fontSize: '15px' }}
                 ></textarea>
               </div>
@@ -297,7 +297,7 @@ export function AddPropertyPage() {
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {['Swimming Pool', 'Gym', 'Clubhouse', 'Garden', 'Security', 'Parking'].map((amenity) => (
-                    <label key={amenity} className="flex items-center gap-2 cursor-pointer">
+                    <label key={amenity} className="flex items-center gap-2 cursor-pointer group">
                       <input
                         type="checkbox"
                         checked={formData.amenities.includes(amenity)}
@@ -308,9 +308,9 @@ export function AddPropertyPage() {
                             setFormData({ ...formData, amenities: formData.amenities.filter((a) => a !== amenity) });
                           }
                         }}
-                        className="w-4 h-4 rounded accent-[var(--pp-primary)]"
+                        className="w-4 h-4 rounded accent-primary cursor-pointer"
                       />
-                      <span style={{ fontSize: '14px', color: 'var(--pp-text)' }}>{amenity}</span>
+                      <span className="font-sans text-sm text-white group-hover:text-primary transition-colors">{amenity}</span>
                     </label>
                   ))}
                 </div>
@@ -324,8 +324,8 @@ export function AddPropertyPage() {
                 Photos & Video
               </h2>
 
-              <div className="border-2 border-dashed border-[var(--pp-border)] rounded-[var(--radius-card)] p-12 text-center">
-                <Upload className="w-12 h-12 mx-auto mb-4" style={{ color: 'var(--pp-text-muted)' }} />
+              <div className="border-2 border-dashed border-white/10 rounded-[var(--radius-card)] p-12 text-center bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all">
+                <Upload className="w-12 h-12 mx-auto mb-4 text-primary" />
                 <p className="mb-2" style={{ fontSize: '16px', fontWeight: 600, color: 'var(--pp-text)' }}>
                   Drag & drop property images here
                 </p>
@@ -334,8 +334,8 @@ export function AddPropertyPage() {
                 </p>
                 <button
                   type="button"
-                  className="px-6 py-3 rounded-[var(--radius-btn)] bg-[var(--pp-primary)] text-white transition-colors hover:bg-[var(--pp-primary-dark)]"
-                  style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '15px' }}
+                  className="px-6 py-3 rounded-[var(--radius-btn)] bg-primary text-black font-semibold hover:bg-primary-dark btn-gold-shimmer transition-all cursor-pointer"
+                  style={{ fontFamily: 'Poppins', fontSize: '15px' }}
                 >
                   Choose Files
                 </button>
@@ -348,7 +348,7 @@ export function AddPropertyPage() {
                 <input
                   type="url"
                   placeholder="https://www.youtube.com/watch?v=..."
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                   style={{ fontSize: '15px' }}
                 />
               </div>
@@ -371,7 +371,7 @@ export function AddPropertyPage() {
                   value={formData.price}
                   onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                   placeholder="3.5"
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                   style={{ fontSize: '15px' }}
                 />
               </div>
@@ -385,7 +385,7 @@ export function AddPropertyPage() {
                   value={formData.possessionDate}
                   onChange={(e) => setFormData({ ...formData, possessionDate: e.target.value })}
                   placeholder="Immediate or Month Year"
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                   style={{ fontSize: '15px' }}
                 />
               </div>
@@ -399,7 +399,7 @@ export function AddPropertyPage() {
                   value={formData.reraId}
                   onChange={(e) => setFormData({ ...formData, reraId: e.target.value })}
                   placeholder="P51900001234"
-                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-[var(--pp-border)] outline-none focus:border-[var(--pp-primary)]"
+                  className="w-full px-4 py-3 rounded-[var(--radius-btn)] border border-white/5 outline-none focus:border-[var(--pp-primary)] bg-white/5 focus:bg-white/10 text-white placeholder-white/30 transition-all focus:ring-1 focus:ring-primary/20 font-sans"
                   style={{ fontSize: '15px' }}
                 />
               </div>
@@ -412,8 +412,8 @@ export function AddPropertyPage() {
                 Review & Submit
               </h2>
 
-              <div className="p-6 rounded-lg bg-[var(--pp-bg)]">
-                <h3 className="mb-4">Property Summary</h3>
+              <div className="p-6 rounded-lg bg-white/5 border border-white/5">
+                <h3 className="mb-4 font-display font-semibold">Property Summary</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p style={{ fontSize: '13px', color: 'var(--pp-text-muted)', marginBottom: '4px' }}>Title</p>
@@ -438,7 +438,7 @@ export function AddPropertyPage() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-lg border border-[var(--pp-primary)] bg-[var(--pp-primary-light)]">
+              <div className="p-4 rounded-lg border border-primary/20 bg-primary-light">
                 <p style={{ fontSize: '14px', color: 'var(--pp-text)' }}>
                   By submitting this property, you agree to our terms and confirm that all information provided is accurate and verified.
                 </p>
@@ -451,10 +451,10 @@ export function AddPropertyPage() {
           <button
             onClick={handlePrev}
             disabled={currentStep === 1}
-            className={`px-6 py-3 rounded-[var(--radius-btn)] flex items-center gap-2 transition-colors ${
+            className={`px-6 py-3 rounded-[var(--radius-btn)] flex items-center gap-2 transition-colors cursor-pointer ${
               currentStep === 1
-                ? 'bg-[var(--pp-bg)] text-[var(--pp-text-muted)] cursor-not-allowed'
-                : 'bg-white text-[var(--pp-text)] hover:bg-[var(--pp-bg)] border border-[var(--pp-border)]'
+                ? 'bg-white/5 text-[var(--pp-text-muted)] cursor-not-allowed border border-white/5'
+                : 'liquid-glass text-white hover:bg-white/5 border border-white/10'
             }`}
             style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '15px' }}
           >
@@ -465,8 +465,8 @@ export function AddPropertyPage() {
           {currentStep < totalSteps ? (
             <button
               onClick={handleNext}
-              className="px-6 py-3 rounded-[var(--radius-btn)] bg-[var(--pp-primary)] text-white flex items-center gap-2 transition-colors hover:bg-[var(--pp-primary-dark)]"
-              style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '15px' }}
+              className="px-6 py-3 rounded-[var(--radius-btn)] bg-primary text-black flex items-center gap-2 transition-all hover:bg-primary-dark btn-gold-shimmer font-semibold cursor-pointer"
+              style={{ fontFamily: 'Poppins', fontSize: '15px' }}
             >
               Next
               <ChevronRight className="w-5 h-5" />
@@ -474,8 +474,8 @@ export function AddPropertyPage() {
           ) : (
             <button
               onClick={handleSubmit}
-              className="px-6 py-3 rounded-[var(--radius-btn)] bg-[var(--pp-success)] text-white transition-opacity hover:opacity-90"
-              style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '15px' }}
+              className="px-6 py-3 rounded-[var(--radius-btn)] bg-emerald-500 text-white transition-opacity hover:opacity-90 font-semibold cursor-pointer"
+              style={{ fontFamily: 'Poppins', fontSize: '15px' }}
             >
               Submit Property
             </button>

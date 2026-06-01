@@ -6,18 +6,14 @@ export function AboutPage() {
     <ScrollReveal>
       <div className="min-h-screen pt-16" style={{ backgroundColor: 'var(--pp-bg)' }}>
         <div
-          className="py-20 text-center text-white"
-          style={{
-            backgroundColor: 'var(--pp-navy)',
-            backgroundImage: 'linear-gradient(135deg, var(--pp-navy) 0%, var(--pp-navy-mid) 100%)',
-          }}
+          className="py-20 text-center text-white border-b border-white/5 bg-gradient-to-b from-navy-mid to-bg"
         >
           <div className="max-w-[1280px] mx-auto px-6">
             <h1 className="mb-4" style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '48px' }}>
-              About Parmar Properties
+              About VEX Properties
             </h1>
-            <p style={{ fontSize: '18px', color: 'var(--pp-primary-light)', maxWidth: '700px', margin: '0 auto' }}>
-              South Mumbai's most trusted real estate partner for over a decade
+            <p style={{ fontSize: '18px', color: 'var(--pp-primary)', maxWidth: '700px', margin: '0 auto' }}>
+              South Mumbai's most trusted luxury real estate partner for over a decade
             </p>
           </div>
         </div>
@@ -30,7 +26,7 @@ export function AboutPage() {
               </h2>
               <div className="space-y-4" style={{ fontSize: '15px', color: 'var(--pp-text-muted)', lineHeight: 1.7 }}>
                 <p>
-                  Founded in 2016, Parmar Properties has been at the forefront of South Mumbai's real estate landscape,
+                  Founded in 2016, VEX Properties (formerly Parmar Properties) has been at the forefront of South Mumbai's real estate landscape,
                   helping thousands of families find their dream homes in the most sought-after localities.
                 </p>
                 <p>
@@ -53,8 +49,7 @@ export function AboutPage() {
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-[var(--radius-card)] text-center"
-                  style={{ boxShadow: 'var(--shadow-card)' }}
+                  className="liquid-glass border border-white/5 p-6 rounded-[var(--radius-card)] text-center transition-all hover:border-primary/20 hover:-translate-y-1 duration-300"
                 >
                   <stat.icon className="w-12 h-12 mx-auto mb-3" style={{ color: 'var(--pp-primary)' }} />
                   <p
@@ -69,7 +64,7 @@ export function AboutPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-[var(--radius-card)] p-12" style={{ boxShadow: 'var(--shadow-card)' }}>
+          <div className="liquid-glass border border-white/5 rounded-[var(--radius-card)] p-12 shadow-card">
             <h2 className="mb-8 text-center" style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '32px', color: 'var(--pp-text)' }}>
               Our Values
             </h2>

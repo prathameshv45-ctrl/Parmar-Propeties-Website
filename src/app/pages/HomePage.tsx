@@ -115,9 +115,8 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* 6a. Stats Bar */}
       <ScrollReveal delay={0}>
-        <section className="bg-navy py-12">
+        <section className="bg-transparent border-y border-white/5 py-12">
           <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { icon: Home, number: 500, suffix: '+', label: 'Properties' },
@@ -147,7 +146,7 @@ export function HomePage() {
       </ScrollReveal>
 
       {/* 6b. Featured Properties */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-transparent">
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal delay={0}>
             <div className="flex justify-between items-center mb-10">
@@ -174,7 +173,7 @@ export function HomePage() {
       </section>
 
       {/* 6e. Property Type Explorer */}
-      <section className="py-20 bg-navy">
+      <section className="py-20 bg-transparent border-t border-white/5">
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal delay={0}>
             <h2 className="font-display font-semibold text-[32px] text-white mb-10">
@@ -192,7 +191,7 @@ export function HomePage() {
             ].map((pt, i) => (
               <ScrollReveal key={pt.type} delay={i * 0.1}>
                 <Link to="/properties" className="block relative min-w-[280px] h-[360px] rounded-card overflow-hidden group snap-center shadow-card">
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent z-10 transition-colors duration-300 group-hover:from-navy/80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-mid/95 via-navy/30 to-transparent z-10 transition-colors duration-300 group-hover:from-navy-mid/80" />
                   <motion.img 
                     src={pt.img} 
                     alt={pt.type} 
@@ -212,7 +211,7 @@ export function HomePage() {
       </section>
 
       {/* 6c. Developer Spotlight */}
-      <section className="py-20 bg-bg">
+      <section className="py-20 bg-transparent">
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal delay={0}>
             <h2 className="text-center font-display font-semibold text-[32px] text-text mb-12">
@@ -226,9 +225,11 @@ export function HomePage() {
                 <Link
                   key={developer.id}
                   to={`/developer/${developer.id}`}
-                  className="bg-white p-6 rounded-card flex flex-col items-center justify-center transition-transform hover:-translate-y-1 shadow-card min-w-[160px] snap-center shrink-0"
+                  className="liquid-glass border border-white/5 p-6 rounded-card flex flex-col items-center justify-center transition-transform hover:-translate-y-1 shadow-card min-w-[160px] snap-center shrink-0"
                 >
-                  <img src={developer.logo} alt={developer.name} className="mb-3 h-12 object-contain" loading="lazy" />
+                  <div className="bg-white/95 p-2 rounded-lg mb-3 w-full h-16 flex items-center justify-center shadow-inner">
+                    <img src={developer.logo} alt={developer.name} className="h-12 object-contain" loading="lazy" />
+                  </div>
                   <p className="text-center font-sans text-[13px] text-text-muted">
                     {developer.propertyCount} Properties
                   </p>
@@ -240,7 +241,7 @@ export function HomePage() {
       </section>
 
       {/* 6d. Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-transparent">
         <div className="max-w-[1280px] mx-auto px-6">
           <ScrollReveal delay={0}>
             <h2 className="text-center font-display font-semibold text-[32px] text-text mb-12">
@@ -272,7 +273,7 @@ export function HomePage() {
               },
             ].map((item, index) => (
               <ScrollReveal key={index} delay={index * 0.15}>
-                <div className="flex gap-5 bg-white p-6 rounded-card border border-border/50 hover:shadow-card transition-shadow">
+                <div className="flex gap-5 liquid-glass p-6 rounded-card border border-white/5 hover:shadow-card hover:border-primary/20 transition-all hover:-translate-y-1 duration-300">
                   <div className="shrink-0 w-16 h-16 rounded-full flex items-center justify-center bg-primary-light">
                     <item.icon className="w-8 h-8 text-primary" />
                   </div>
@@ -291,7 +292,7 @@ export function HomePage() {
 
       {/* 6f. Contact Strip + Footer */}
       <ScrollReveal delay={0}>
-        <section className="py-20 bg-navy">
+        <section className="py-20 bg-transparent border-t border-white/5">
           <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
             <div className="flex flex-col gap-8 text-white">
@@ -330,7 +331,7 @@ export function HomePage() {
                 ></textarea>
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-btn bg-primary text-white flex items-center justify-center gap-2 transition-colors font-display font-semibold text-[15px] btn-gold-shimmer"
+                  className="px-6 py-3 rounded-btn bg-primary text-black flex items-center justify-center gap-2 transition-colors font-display font-semibold text-[15px] btn-gold-shimmer"
                 >
                   <Send className="w-5 h-5" />
                   Send Message
@@ -342,12 +343,12 @@ export function HomePage() {
         </section>
       </ScrollReveal>
 
-      <footer className="py-12 bg-navy-mid text-white">
+      <footer className="py-12 bg-navy-mid/60 text-white border-t border-white/5">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center mb-4">
-                <div className="font-display font-bold text-[20px] text-primary">PARMAR</div>
+                <div className="font-display font-bold text-[20px] text-primary">VEX</div>
                 <div className="font-display font-semibold text-[20px] ml-1.5">PROPERTIES</div>
               </div>
               <p className="font-sans text-[14px] opacity-80 leading-relaxed">
@@ -380,8 +381,8 @@ export function HomePage() {
               <h4 className="font-display font-semibold mb-4">Newsletter</h4>
               <p className="font-sans text-[14px] opacity-80 mb-4">Subscribe for latest updates.</p>
               <div className="flex">
-                <input type="email" placeholder="Email Address" className="px-4 py-2 rounded-l-btn bg-white/10 text-white outline-none w-full border border-white/20 border-r-0 font-sans text-sm" />
-                <button className="bg-primary px-4 rounded-r-btn font-display font-semibold hover:bg-primary-dark transition-colors">OK</button>
+                <input type="email" placeholder="Email Address" className="px-4 py-2 rounded-l-btn bg-white/10 text-white outline-none w-full border border-white/20 border-r-0 font-sans text-sm focus:border-primary" />
+                <button className="bg-primary text-black px-4 rounded-r-btn font-display font-semibold hover:bg-primary-dark transition-colors btn-gold-shimmer">OK</button>
               </div>
             </div>
           </div>

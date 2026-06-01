@@ -22,9 +22,8 @@ export function Navbar() {
       initial={{ y: -64 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 shadow-[0_2px_20px_rgba(0,0,0,0.2)] backdrop-blur-md"
+      className="fixed top-0 left-0 right-0 z-50 liquid-glass border-b border-white/5"
       style={{
-        backgroundColor: 'var(--pp-navy-mid)',
         height: '64px',
       }}
     >
@@ -34,12 +33,12 @@ export function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Link to="/" className="flex items-center">
-            <div className="font-display font-bold text-2xl text-primary">
-              PARMAR
+          <Link to="/" className="flex items-center gap-2">
+            <div className="font-display font-bold text-2xl tracking-wider text-white">
+              VEX
             </div>
-            <div className="font-display font-semibold text-2xl text-white ml-1.5">
-              PROPERTIES
+            <div className="font-sans text-[11px] uppercase tracking-[0.25em] text-primary/80 border-l border-white/20 pl-2 mt-1">
+              Properties
             </div>
           </Link>
         </motion.div>
@@ -87,7 +86,7 @@ export function Navbar() {
           </Link>
           <Link
             to="/add-property"
-            className="px-6 py-2.5 rounded-btn bg-primary text-white transition-colors hover:bg-primary-dark font-display font-semibold text-[15px]"
+            className="px-6 py-2.5 rounded-btn bg-primary text-black transition-colors hover:bg-primary-dark font-display font-semibold text-[15px] btn-gold-shimmer"
           >
             Post Property
           </Link>
@@ -107,7 +106,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-16 left-0 right-0 py-4 px-6 bg-navy-mid shadow-lg"
+            className="md:hidden absolute top-16 left-0 right-0 py-4 px-6 liquid-glass border-b border-white/10 shadow-lg"
           >
             {navLinks.map((link) => (
               <Link
@@ -131,7 +130,7 @@ export function Navbar() {
               <Link
                 to="/add-property"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-6 py-2.5 text-center rounded-btn bg-primary text-white font-display font-semibold text-[15px]"
+                className="px-6 py-2.5 text-center rounded-btn bg-primary text-black font-display font-semibold text-[15px] btn-gold-shimmer"
               >
                 Post Property
               </Link>

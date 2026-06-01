@@ -9,19 +9,25 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: '#C8972B',
-          dark:    '#A07820',
-          light:   '#F5E6C0',
+          DEFAULT: '#D4AF37',
+          dark:    '#AA8515',
+          light:   'rgba(212, 175, 55, 0.12)',
         },
         navy: {
-          DEFAULT: '#1A1A2E',
-          mid:     '#16213E',
+          DEFAULT: '#0E0E12',
+          mid:     '#070709',
         },
+        bg: '#040405',
+        text: {
+          DEFAULT: '#F3F3F6',
+          muted:   '#8E8E9B',
+        },
+        border: 'rgba(255, 255, 255, 0.08)',
       },
       boxShadow: {
-        card:       '0 2px 16px rgba(0,0,0,0.07)',
-        'card-lg':  '0 8px 32px rgba(0,0,0,0.14)',
-        hero:       '0 8px 40px rgba(0,0,0,0.18)',
+        card:       '0 12px 40px rgba(0,0,0,0.6)',
+        'card-lg':  '0 16px 48px rgba(212,175,55,0.08)',
+        hero:       '0 20px 80px rgba(0,0,0,0.8)',
       },
       borderRadius: {
         card: '12px',
